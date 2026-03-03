@@ -1,16 +1,87 @@
-# React + Vite
+# Smart Email Writer - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the React-based web interface for the **Smart Email Writer**. It allows users to manually paste email content, select a preferred tone, and generate AI-powered replies using the integrated backend service.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Interactive UI**: A clean, modern interface built with React for an effortless user experience.
+* **Tone Selection**: Customize the AI's response style (e.g., Professional, Casual, or Friendly) to match the context of your conversation.
+* **Real-time Generation**: Communicates with the Spring Boot backend to provide instant email drafts.
+* **One-Click Copy**: Easily copy the generated response to your clipboard for use in any email client.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Framework**: React 18 (Vite)
+* **HTTP Client**: Axios
+* **Styling**: Material UI (MUI)
+* **Build Tool**: Vite
 
-## Expanding the ESLint configuration
+## 🏗️ Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+email-writer-frontend/
+├── src/
+│   ├── App.jsx        # Main application logic and UI components
+│   ├── main.jsx       # Application entry point
+│   └── index.css      # Global styles
+├── public/            # Static assets
+├── package.json       # Project dependencies and scripts
+└── vite.config.js     # Vite configuration
+
+```
+
+## 📋 Prerequisites
+
+* **Node.js**: Version 18.x or higher
+* **Package Manager**: NPM or Bun (as indicated by the `bun.lock` file in the repo)
+* **Backend**: Ensure the [Smart Email Writer Backend] is running at `http://localhost:8080`.
+
+## 🚀 Getting Started
+
+1. **Navigate to the frontend directory**:
+```bash
+cd smart-email-frontend
+
+```
+
+
+2. **Install dependencies**:
+```bash
+npm install
+# OR
+bun install
+
+```
+
+
+3. **Run the development server**:
+```bash
+npm run dev
+
+```
+
+
+4. **Access the App**: Open [http://localhost:5173](https://www.google.com/search?q=http://localhost:5173) in your browser.
+
+## 🖼️ Working Images
+
+### 1. Main Dashboard
+
+The dashboard provides a simple text area where you can paste the email you received.
+
+### 2. Tone Configuration & Generation
+
+Select your desired tone from the dropdown menu and hit "Generate Reply". The app displays a loading state while fetching the response from the AI.
+
+### 3. Generated Output
+
+The generated response appears in a dedicated output box, allowing you to review or copy the text before sending.
+
+---
+
+## 🤝 Integration
+
+This frontend is a component of the Smart Email Writer ecosystem:
+
+* **Backend**: Processes AI logic via Google Gemini.
+* **Chrome Extension**: Provides the same functionality directly inside the Gmail interface.
