@@ -8,13 +8,16 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-
+  const API_URL =
+    import.meta.env.VITE_API_URL;
+  console.log(API_URL);
+  
   const handleSubmit = async () => {
     setLoading(true);
     setError("");
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/email/generate",
+        API_URL,
         { emailContent, tone },
       );
       setGeneratedReply(
@@ -171,7 +174,6 @@ function App() {
             )}
           </div>
 
-          {/* RIGHT: Output Card */}
           {/* RIGHT: Output Card */}
           <div className="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 sm:p-8 flex flex-col">
             <h2 className="text-sm font-semibold text-slate-700 mb-4">
