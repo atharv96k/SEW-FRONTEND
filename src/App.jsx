@@ -17,7 +17,7 @@ function App() {
     setError("");
     try {
       const response = await axios.post(
-        API_URL,
+        `${API_URL}/api/email/generate`,
         { emailContent, tone },
       );
       setGeneratedReply(
